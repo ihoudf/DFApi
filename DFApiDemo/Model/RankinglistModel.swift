@@ -15,16 +15,16 @@ class RankinglistModel: HandyJSON {
 
 class RankingModel: HandyJSON {
     var argCon: Int = 0
-    var argName: String?
+    var argName: String = ""
     var argValue: Int = 0
     var canEdit: Bool = false
-    var cover: String?
+    var cover: String = ""
     var isLike: Bool = false
     var sortId: Int = 0
-    var sortName: String?
-    var title: String?
-    var subTitle: String?
-    var rankingType: String?
+    var sortName: String = ""
+    var title: String = ""
+    var subTitle: String = ""
+    var rankingType: String = ""
     required init() {}
 
 }

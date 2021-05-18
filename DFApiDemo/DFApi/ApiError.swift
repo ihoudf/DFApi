@@ -10,7 +10,6 @@ import Foundation
 public enum ApiError: Swift.Error, CaseIterable {
     // *** 本地错误码 ***
     case ApiLocalErrorUnknown
-//    case ApiLocalError
     case ApiLocalErrorIllegalParams
     case ApiLocalErrorDataFormat
     case ApiLocalErrorNoLinkToNet

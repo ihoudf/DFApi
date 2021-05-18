@@ -19,16 +19,15 @@ class ViewController: UIViewController {
         lb.backgroundColor = .white
         self.view.addSubview(lb)
 
-//        ApiRequest(target: .rankList) { (isSucc, res: RankinglistModel?, error) in
-//            if isSucc {
-//                guard let model = res else { return }
-//                let ddd = model.rankinglist?.last
-//                print("=======================" + (ddd?.subTitle ?? ""))
-//                lb.text = ddd?.title ?? ""
-//            }else{
-//                print(error?.localizedDescription ?? "")
-//            }
-//        }
+        ApiRequest(target: .rankList) { (isSucc, res: RankinglistModel?, error) in
+            if isSucc {
+                guard let model = res, let ddd = model.rankinglist?.last else { return }
+                print("=======================" + (ddd.subTitle))
+                lb.text = ddd.title
+            }else{
+                print(error?.localizedDescription ?? "")
+            }
+        }
 
 //
 //        ApiRequest(target: .searchHot) { (isSucc, res: HotListModel?, _) in
@@ -42,13 +41,13 @@ class ViewController: UIViewController {
 //        }
         
         // 这个接口是随便写的，所以会失败
-        ApiRequest(target: .userInfo(userId: "2333")) { (isSucc, res: ApiEmptyModel?, _) in
-            if isSucc {
-                print("成功")
-            }else{
-                print("失败")
-            }
-        }
+//        ApiRequest(target: .userInfo(userId: "2333")) { (isSucc, res: ApiEmptyModel?, _) in
+//            if isSucc {
+//                print("成功")
+//            }else{
+//                print("失败")
+//            }
+//        }
 
 
         
